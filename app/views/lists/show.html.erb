@@ -1,0 +1,18 @@
+<div class="banner">
+  <h1><%= @list.name %></h1>
+  <div class="bot-left flex">
+    <%= link_to "<- Back", lists_path, class: "new-list" %>
+    <%= link_to "Add Movie +", new_list_bookmark_path(@list), class: "new-list" %>
+  </div>
+</div>
+<div class="cont">
+  <div class="flex">
+    <% @list.bookmarks.each do |book| %>
+      <div class="bookmark-card">
+        <%= image_tag book.movie.poster_url, alt: book.movie.poster_url, class: "cover" %>
+        <h1><%= book.movie.title %></h1>
+        <p><%= book.comment %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

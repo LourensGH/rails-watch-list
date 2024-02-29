@@ -1,0 +1,20 @@
+<div class="flex">
+  <div class="container">
+    <% @movies.each do |movie| %>
+    <div class="movie-card">
+        <%= image_tag movie.poster_url, alt: movie.poster_url, class: "cover" %>
+        <div class="content">
+          <h1><%= movie.title %></h1>
+          <p><%= movie.overview %></p>
+          <p><%= movie.rating %></p>
+          <%= simple_form_for(@bookmark, url: list_bookmarks_path(@list)) do |f| %>
+            <%= f.hidden_field :movie_id, value: movie.id %>
+            <%= f.hidden_field :list_id, value: @list.id %>
+            <%= f.input :comment %>
+            <%= f.submit "Create Bookmark +", class: "new-list" %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

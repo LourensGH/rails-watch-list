@@ -1,0 +1,49 @@
+// Import page-specific CSS files here.
+@import "home";
+
+.banner {
+  width: 100%;
+  height: 20rem;
+  position: relative; // Set position to relative for the banner container
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-literary-atmospheric-movie-market-banner-poster-image_188563.jpg");
+  background-size: cover;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+  h1 {
+    font-size: 3rem;
+  }
+  .bot-left {
+    position: absolute; // Set position to absolute for the items
+    bottom: 1rem; // Position the items at the bottom of the banner
+    right: 1rem; // Position the items at the left of the banner
+  }
+}
+
+.cont {
+  padding: 4rem;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.list-card {
+  width: 20rem;
+  height: 12rem;
+  margin: 16px;
+}
+
+.new-list {
+  padding: 1rem;
+  font-size: 2rem;
+  border: 1px solid black;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  transition: 0.5s ease;
+  &:hover {
+    background-color: $blue;
+    color: white;
+  }
+}

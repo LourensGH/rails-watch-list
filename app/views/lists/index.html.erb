@@ -1,0 +1,14 @@
+<div class="banner">
+  <h1>Create Your Movie lists</h1>
+  <%= link_to "New List +", new_list_path, class: "new-list bot-left" %>
+</div>
+<div class="cont">
+  <div class="flex">
+    <% @lists.each do |list| %>
+      <div class="list-card">
+        <h1><%= link_to list.name, list_path(list) %></h1>
+        <i class="fa-solid fa-clapperboard movie-icon fa-6x"></i>
+      </div>
+    <% end %>
+  </div>
+</div>
