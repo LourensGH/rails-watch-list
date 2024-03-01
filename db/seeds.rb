@@ -9,7 +9,7 @@
 #   end
 require 'net/http'
 
-url = 'https://tmdb.lewagon.com/movie/top_rated'
+url = 'https://tmdb.lewagon.com/discover/movie'
 uri = URI(url)
 response = Net::HTTP.get(uri)
 data = JSON.parse(response)

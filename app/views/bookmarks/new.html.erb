@@ -11,7 +11,10 @@
             <%= f.hidden_field :movie_id, value: movie.id %>
             <%= f.hidden_field :list_id, value: @list.id %>
             <%= f.input :comment %>
-            <%= f.submit "Create Bookmark +", class: "new-list" %>
+            <div class="flexbox">
+              <%= f.submit "Add Bookmark", class: "new-list" %>
+              <i class="fa-solid fa-plus fa-6x icon"></i>
+            </div>
           <% end %>
         </div>
       </div>

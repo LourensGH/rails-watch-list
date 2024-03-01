@@ -1,6 +1,12 @@
 // Import page-specific CSS files here.
 @import "home";
 
+body {
+  background-color: $green;
+  background-size: cover; /* Scale the background image to cover the entire page */
+  background-repeat: no-repeat;
+}
+
 .banner {
   width: 100%;
   height: 20rem;
@@ -29,10 +35,34 @@
   justify-content: center;
 }
 
+.flexbox {
+  display: flex;
+
+  .icon {
+    margin-left: 6px;
+    visibility: hidden;
+  }
+
+  .new-list:hover + .icon {
+    animation: spin 0.2s linear forwards;
+    visibility: visible;
+  }
+}
+
 .list-card {
   width: 20rem;
   height: 12rem;
   margin: 16px;
+  text-align: center;
+  background-image: url("https://st3.depositphotos.com/4202565/32180/v/450/depositphotos_321805546-stock-illustration-movie-time-flat-concept-background.jpg");
+  background-size: cover;
+  position: relative;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  .movie-icon {
+    position: absolute;
+    right: 20px;
+  }
 }
 
 .new-list {
@@ -46,4 +76,9 @@
     background-color: $blue;
     color: white;
   }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(180deg); }
 }
