@@ -7,6 +7,7 @@
     <% @lists.each do |list| %>
       <div class="list-card" style="<%= list.photo.present? ? "background-image: url('#{cloudinary_url(list.photo.key, crop: :fill)}');" : "background-image: url('https://st3.depositphotos.com/4202565/32180/v/450/depositphotos_321805546-stock-illustration-movie-time-flat-concept-background.jpg');" %>">
         <h1><%= link_to list.name, list_path(list), class: "list-name" %></h1>
+        <%= link_to "-", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "remove-btn" %>
       </div>
     <% end %>
   </div>

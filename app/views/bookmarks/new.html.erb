@@ -1,5 +1,9 @@
 <div class="flex">
   <div class="container">
+    <%= simple_form_for :search, url: search_list_bookmarks_path, method: :get do |f| %>
+      <%= f.input :search, placeholder: "Search for a movie" %>
+      <%= f.submit "Search" %>
+    <% end %>
     <% @movies.each do |movie| %>
     <div class="movie-card">
         <%= image_tag movie.poster_url, alt: movie.poster_url, class: "cover" %>

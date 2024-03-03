@@ -12,6 +12,7 @@
         <%= image_tag book.movie.poster_url, alt: book.movie.poster_url, class: "cover" %>
         <h1><%= book.movie.title %></h1>
         <p><%= book.comment %></p>
+        <%= link_to "-", bookmark_path(book), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "remove-btn" %>
       </div>
     <% end %>
   </div>

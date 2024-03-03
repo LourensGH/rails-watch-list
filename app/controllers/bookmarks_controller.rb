@@ -19,6 +19,22 @@ class BookmarksController < ApplicationController
     end
   end
 
+  def destroy
+    @bookmark = Bookmark.find(params[:id])
+    @bookmark.destroy
+    redirect_to list_path(@bookmark.list)
+  end
+
+  def search
+    search_params = params.require(:search).permit(:search)
+    search_query = search_params[:search]
+
+    @movies = Movie.where("title LIKE ?", "%#{search_query}%")
+    @list = List.find(params[:list_id])
+    @bookmark = Bookmark.new
+    render 'new'
+  end
+
   private
 
   def bookmark_params
