@@ -4,6 +4,14 @@
       <%= f.input :search, placeholder: "Search for a movie" %>
       <%= f.submit "Search" %>
     <% end %>
+    <% if @bookmark.errors.count > 0 %>
+      <h2><%= pluralize(@bookmark.errors.count, "error") %> prohibited this bookmark from being saved:</h2>
+      <ul>
+      <% @bookmark.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    <% end %>
     <% @movies.each do |movie| %>
     <div class="movie-card">
         <%= image_tag movie.poster_url, alt: movie.poster_url, class: "cover" %>
